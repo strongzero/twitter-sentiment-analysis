@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+    - 27027:27017
+
+  tweet_collector:
+    build: tweet_collector/
+    volumes:
+    - ./tweet_collector/:/app
+    depends_on:
+    - mongodb
+
+    # first: SQL DB
+  postgresdb:          # name : also the hostname
+    image: postgres    # image downloaded from DockerHub
+    ports:
+    - 5555:5432        # maps port 5432 *inside* the container to port 5555 on my local machine
+                       # because port 5432 is already used on my local machine
+    environment:       # set an environment variable
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=titanic99
+    - POSTGRES_DB=gloria
