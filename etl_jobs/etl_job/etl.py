@@ -18,7 +18,7 @@ docs = db.twitter.find()
 
 from sqlalchemy import create_engine
 
-pg = create_engine('postgresql://postgres:titanic99@postgresdb:5432/twitter', echo=True)
+pg = create_engine('postgresql://postgres:password@postgresdb:5432/twitter', echo=True)
 
 pg.execute('''
     CREATE TABLE IF NOT EXISTS tweets (

@@ -1,7 +1,7 @@
 import tweepy
 
-API_KEY = "7y7C2vmIUEg89N7NdkAiHBFxz"
-API_SECRET = "iJRMq6qJW8KaAnTSO44hMEMzRwetgtNhwXrK7xHz7fb35T39dc"
+API_KEY = ""
+API_SECRET = ""
 
 
 def get_auth_handler():
